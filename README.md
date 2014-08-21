@@ -123,7 +123,7 @@ How to use
     self.adManager = [[SLTableViewAdManager alloc] initWithTableView:self.tableView
                                                           dataSource:self.dataSource
                                                       viewController:self];
-   ```
+  ```
 - Request ads with entity name that identifies your feeds content, category (feed contents category), and success, failure, start and finish handlers.
 
   ```Objective-C
@@ -146,7 +146,7 @@ How to use
 - Add these codes into the UITableView datasource and delegate methods;
 
   ```Objective-C
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         return [self.adManager cellForRowAtIndexPath:indexPath];
@@ -157,7 +157,7 @@ How to use
   ```
 
   ```Objective-C
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+   - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if ([self.adManager shouldShowAdAtIndexPath:indexPath])
     {
@@ -165,11 +165,11 @@ How to use
     }
 
     // your stuff here
-}
+   }
   ```
 
   ```Objective-C
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if([self.adManager shouldShowAdAtIndexPath:indexPath])
     {
@@ -179,7 +179,7 @@ How to use
     {
       // your stuff here
     }
-}
+  }
   ```
 ### CollectionView integration
 
@@ -224,18 +224,18 @@ How to use
 - Add these codes into the UICollectionView datasource and delegate methods;
 
   ```Objective-C
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+  - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         return [self.adManager cellForItemAtIndexPath:indexPath];
     }
 
     //your stuff here
-}
+  }
   ```
 
   ```Objective-C
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+  - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         return [self.adManager sizeForItemAtIndexPath:indexPath];
@@ -246,7 +246,7 @@ How to use
   ```
 
   ```Objective-C
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+  - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         [self.adManager didSelectItemAtIndexPath:indexPath];
@@ -257,7 +257,7 @@ How to use
   ```
 
 ### Banner integration
-- Import required headers
+  - Import required headers
 
   ```Objective-C
     #import <Seamless/Seamless.h>
@@ -288,11 +288,11 @@ How to use
    ```
 - Delegate methods
   ```Objective-C
--(void)adViewDidLoad:(SLAdView*)adView{
+  -(void)adViewDidLoad:(SLAdView*)adView{
   // ad load success
-}
+ }
 
--(void)adViewDidFailToLoad:(SLAdView*)adView{
+  -(void)adViewDidFailToLoad:(SLAdView*)adView{
   // ad load failed
 }
   ```
@@ -334,6 +334,20 @@ How to use
 
 ### Custom Appearance
 - If you want to customize appearance of in-feed ads you can use SLAppearance class.
+```Objective-C
+    SLAppearance * appearance = [SLAppearance alloc] init];
+
+    // Container customizations
+    appearance.cellBackgroundColor = [UIColor grayColor]; // cell background color.
+    appearance.containerBackgroundColor = [UIColor darkGrayColor]; // ad container background color.
+    appearance.containerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10); // ad container edge insets
+    appearance.containerBorderWidth = 0.5; // ad container border line width
+    appearance.containerBorderLineColor = [UIColor blackColor]; // ad container border line color
+    appearance.containerCornerRadius = 5.0; // ad container corner radius
+
+    //Maia customizations
+    appearance.maiaAdHeaderBackgroundColor = []
+```
 
 
 ### See sample project for usage

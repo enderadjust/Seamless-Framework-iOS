@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSMutableArray * ads;
 @property (nonatomic, strong) NSMutableArray * notInsertedAds;
 @property (nonatomic, strong) NSMutableArray * insertQueue;
+@property (nonatomic, strong) NSMutableArray * reloadQueue;
 @property (nonatomic, strong) NSTimer * insertTimer;
 @property (nonatomic, strong) NSMutableSet *insertedAds;
 @property (nonatomic, strong) NSMutableSet *maiaAds;

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIColor * containerBackgroundColor;
 @property (nonatomic, strong) UIColor * containerBorderLineColor;
+@property (nonatomic) UIEdgeInsets containerEdgeInsets;
 @property (nonatomic) CGFloat containerBorderWidth;
 @property (nonatomic) CGFloat containerCornerRadius;
 
@@ -39,7 +40,6 @@
 @property (nonatomic, strong) UIColor * maiaDownloadInfoTextColor;
 @property (nonatomic, strong) UIColor * maiaTaglineTextColor;
 
-@property (nonatomic) UIEdgeInsets containerEdgeInsets;
 @property (nonatomic) CGFloat displayAdTopInset;
 @property (nonatomic) CGFloat displayAdBottomInset;
 
