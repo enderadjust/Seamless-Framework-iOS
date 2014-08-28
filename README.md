@@ -28,9 +28,9 @@ Installation
      If folder is not visible at the left side of XCode window, you could reveal navigation bar with (command + shift + j) keyboard shortcut and find it under your project. A dialog for file adding options will appear
 
 
-![Alt text](/ReadmeAssets/DragAndDrop/6.png "Drag & drop Seamless.embeddedframework")
+  ![Alt text](/ReadmeAssets/DragAndDrop/6.png "Drag & drop Seamless.embeddedframework")
 
-![Alt text](/ReadmeAssets/DragAndDrop/7.png "File adding options setup dialog")
+  ![Alt text](/ReadmeAssets/DragAndDrop/7.png "File adding options setup dialog")
 
 
   . On dialog;
@@ -45,10 +45,8 @@ Installation
 
       ![Alt text](/ReadmeAssets/DragAndDrop/dragsetuptarget.png "Select <YourProjectName> at "Add to targets" section.")
 
+    must be selected.
 
-  must be selected.
-
-  If cloned Woodo's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
 
   2. Now, you have to add 'Other Linker Flags'. Click project navigator icon ![Alt text](/ReadmeAssets/Common/iconnavigator.png "Navigator icon") at upper-left corner (below run button)
 
@@ -95,7 +93,23 @@ How to use
 
       // ...
 
-      [SLManager setAppToken:@"<Please contact seamless@mobilike.com for app token data>"];
+      [[SLManager sharedManager] setAppToken:@"<Please contact seamless@mobilike.com for app token data>"];
+
+      // ...
+
+      return YES;
+    }
+  ```
+
+  If you want to enable location based targeting, you should enable.
+  ```Objective-C
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+      // Override point for customization after application launch.
+
+      // ...
+
+      [[SLManager sharedManager] setLocationEnabled:YES];
 
       // ...
 
