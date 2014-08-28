@@ -347,7 +347,10 @@ How to use
 You can set display ads bottom and top inset with container.
 
 ![Alt text](/ReadmeAssets/customization/4.png "display container")
-
+```Objective-C
+    appearance.displayAdBottomInset = 10.0;
+    appearance.displayAdTopInset = 10.0;
+```
 - You can set your background colors and CTA Button image:
 
 ![Alt text](/ReadmeAssets/customization/2.png "colors")
