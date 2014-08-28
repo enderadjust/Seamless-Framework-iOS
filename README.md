@@ -372,5 +372,6 @@ You can set display ads bottom and top inset with container.
     appearance.maiaAdBorderLineColor = [UIColor blackColor];
     appearance.maiaAdCornerRadius = 3;
 ```
-
+- For the text properties you have these options:
+![Alt text](/ReadmeAssets/customization/5.png "Texts")
 ### See sample project for usage
