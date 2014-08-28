@@ -30,7 +30,7 @@ Installation
 
 ![Alt text](/ReadmeAssets/DragAndDrop/6.png "Drag & drop Seamless.embeddedframework")
 
-![Alt text](/ReadmeAssets/DragAndDrop/dragsetup.png "File adding options setup dialog")
+![Alt text](/ReadmeAssets/DragAndDrop/7.png "File adding options setup dialog")
 
 
   . On dialog;
