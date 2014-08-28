@@ -28,27 +28,27 @@ Installation
      If folder is not visible at the left side of XCode window, you could reveal navigation bar with (command + shift + j) keyboard shortcut and find it under your project. A dialog for file adding options will appear
 
 
-      ![Alt text](/ReadmeAssets/DragAndDrop/dragframework.png "Drag & drop Woodo.framework")
+![Alt text](/ReadmeAssets/DragAndDrop/6.png "Drag & drop Seamless.embeddedframework")
 
-      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetup.png "File adding options setup dialog")
-
-
-      . On dialog;
-
-        * Create groups for any added folders and
-
-          ![Alt text](/ReadmeAssets/DragAndDrop/dragsetupfolders.png "Select 'Create groups for any added folders and'")
+![Alt text](/ReadmeAssets/DragAndDrop/dragsetup.png "File adding options setup dialog")
 
 
+  . On dialog;
 
-        * "YourProjectName" at "Add to targets" section.
+  * Create groups for any added folders and
 
-          ![Alt text](/ReadmeAssets/DragAndDrop/dragsetuptarget.png "Select <YourProjectName> at "Add to targets" section.")
+      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetupfolders.png "Select 'Create groups for any added folders and'")
 
 
-          must be selected.
 
-          If cloned Woodo's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
+  * "YourProjectName" at "Add to targets" section.
+
+      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetuptarget.png "Select <YourProjectName> at "Add to targets" section.")
+
+
+  must be selected.
+
+  If cloned Woodo's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
 
   2. Now, you have to add 'Other Linker Flags'. Click project navigator icon ![Alt text](/ReadmeAssets/Common/iconnavigator.png "Navigator icon") at upper-left corner (below run button)
 
