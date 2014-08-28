@@ -339,9 +339,13 @@ How to use
 ![Alt text](/ReadmeAssets/customization/3.png "Container edge insets")
 ```Objective-C
      SLAppearance * appearance = [SLAppearance alloc] init];
-     appearance.containerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10); // ad container edge insets
-
+     appearance.containerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
 ```
+>Your containers left and right insets shouldn't be greater than 22 pt!
+
+- You can set your background colors and CTA Button image:
+
+![Alt text](/ReadmeAssets/customization/2.png "colors")
 
 
 ### See sample project for usage
