@@ -332,21 +332,15 @@ How to use
     }];
 ```
 
-### Custom Appearance
+### Feed Ad Customization
 - If you want to customize appearance of in-feed ads you can use SLAppearance class.
+- You can set your ad containers insets:
+
+![Alt text](/ReadmeAssets/customization/3.png "Container edge insets")
 ```Objective-C
-    SLAppearance * appearance = [SLAppearance alloc] init];
+     SLAppearance * appearance = [SLAppearance alloc] init];
+     appearance.containerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10); // ad container edge insets
 
-    // Container customizations
-    appearance.cellBackgroundColor = [UIColor grayColor]; // cell background color.
-    appearance.containerBackgroundColor = [UIColor darkGrayColor]; // ad container background color.
-    appearance.containerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10); // ad container edge insets
-    appearance.containerBorderWidth = 0.5; // ad container border line width
-    appearance.containerBorderLineColor = [UIColor blackColor]; // ad container border line color
-    appearance.containerCornerRadius = 5.0; // ad container corner radius
-
-    //Maia customizations
-    appearance.maiaAdHeaderBackgroundColor = []
 ```
 
 
