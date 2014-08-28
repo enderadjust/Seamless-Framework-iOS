@@ -28,7 +28,7 @@ Installation
      If folder is not visible at the left side of XCode window, you could reveal navigation bar with (command + shift + j) keyboard shortcut and find it under your project. A dialog for file adding options will appear
 
 
-      ![Alt text](/ReadmeAssets/DragAndDrop/dragframework.png "Drag & drop Woodo.framework")
+      ![Alt text](/ReadmeAssets/DragAndDrop/dragframework.png "Drag & drop Seamless.framework")
 
       ![Alt text](/ReadmeAssets/DragAndDrop/dragsetup.png "File adding options setup dialog")
 
@@ -48,7 +48,7 @@ Installation
 
           must be selected.
 
-          If cloned Woodo's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
+          If cloned Seamless's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
 
   2. Now, you have to add 'Other Linker Flags'. Click project navigator icon ![Alt text](/ReadmeAssets/Common/iconnavigator.png "Navigator icon") at upper-left corner (below run button)
 
@@ -346,6 +346,272 @@ How to use
 - You can set your background colors and CTA Button image:
 
 ![Alt text](/ReadmeAssets/customization/2.png "colors")
+
+
+### See sample project for usage
+
+
+Player
+_____________________________
+
+
+### Setup
+
+  In order to use Seamless Player properly "AccessToken", "AppToken" and "ClientSecret" parameters need to be decleared on SLPlayerManager class before usage. It is recommended to perform setup on "UIApplicationDelegate" instance's "application:application didFinishLaunchingWithOptions:." selector.
+
+  i.e
+
+  ```Objective-C
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+      // Override point for customization after application launch.
+
+      // ...
+
+      [SLPlayerManager setAccessToken:@"<Please contact info@mobilike.com for access token data>"];
+      [SLPlayerManager setAppToken:@"<Please contact info@mobilike.com for app token data>"];
+      [SLPlayerManager setClientSecret:@"<Please contact info@mobilike.com for client secret data>"];
+      // ...
+
+      return YES;
+    }
+  ```
+
+### Basic usage
+
+  - As subview
+
+    - Import required headers
+
+      ```Objective-C
+        #import <Seamless/Seamless.h>
+      ```
+
+    - Call presentation method over SLPlayerManager's shared instance with required parameters
+
+      ```Objective-C
+        NSURL *url = [NSURL URLWithString:@"<Your video content url>"];
+        NSString *token = @"<Please contact info@mobilike.com for player token data>";
+
+        [[SLPlayerManager sharedManager]
+         addPlayerToView:self.videoThumbnail
+         url:url
+         token:token];
+      ```
+
+
+  - As modal view controller
+
+    - Import required headers
+
+      ```Objective-C
+        #import <Seamless/Seamless.h>
+      ```
+
+    - Call presentation method over SLPlayerManager's shared instance with required parameters
+
+      ```Objective-C
+        NSURL *url = [NSURL URLWithString:@"<Your video content url>"];
+        NSString *token = @"<Please contact info@mobilike.com for player token data>";
+
+        [[SLPlayerManager sharedManager]
+          presentPlayerWithUrl:url
+          token:token];
+      ```
+
+
+### Seamless callbacks
+
+
+  **If don't have comprehensive knowledge on self usage with objective-c blocks, you might want to look at https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW16**
+
+
+  All callback handlers passed within SLHandler instance
+
+  ```Objective-C
+
+  // Allocation & initialization of handler
+  SLHandler *handler = [[SLHandler alloc] init];
+
+  // Initialize callback handlers here. See below for more details
+
+  // Assignment of handler
+  [[SLPlayerManager sharedManager]
+    // ...
+    handler:handler
+    // ...];
+
+  ```
+
+  - Presentation handler,
+
+    . if presenting Seamless as view controller, this callback fired right after presentation animation completed.
+
+    . if adding Seamless as subview, this callback fired right after attached to superview.
+
+    ```Objective-C
+    // Allocation & initialization of presentation handler
+    handler.presentation = ^(){
+      NSLog(@"Seamless presented (Available on UI)");
+    };
+    ```
+
+
+  - Start handler, fired when user-content (non-advertisement) started playback.
+
+    ```Objective-C
+    // Allocation & initialization of start handler
+    handler.start = ^(){
+      NSLog(@"Seamless started");
+    };
+    ```
+
+
+  - Progress handler, fired when user-content (non-advertisement) playback progress (current playback timestamp) altered.
+
+    ```Objective-C
+    // Allocation & initialization of progress handler
+    handler.progress = ^(CGFloat currentTime, CGFloat duration){
+      // Video progress updated
+      NSLog(@"Seamless progress: %f / %f", currentTime, duration);
+    };
+    ```
+
+
+  - Finish handler,
+
+    . if presented Seamless as view controller, this callback fired right after dismiss animation completed.
+
+    . if added Seamless as subview, this callback fired right after detached from superview.
+
+    Finish handler callback means Seamless completed playing each content (including advertisements).
+
+    ```Objective-C
+    // Allocation & initialization of finish handler
+    handler.finish = ^(){
+      NSLog(@"Seamless finished (Removed from UI)");
+    };
+    ```
+
+
+  - Error handler, fired if any error occured during playback. i.e, Timeout occured, non-supported video format provided, ...
+
+    **If this callback fired, finish handler won't be called.**
+
+    ```Objective-C
+    // Allocation & initialization of error handler
+    handler.error = ^(){
+      NSLog(@"Seamless error (Removed from UI)");
+    };
+    ```
+
+
+### Default video controllers
+
+  - Import required headers
+
+    ```Objective-C
+      #import <Seamless/Seamless.h>
+    ```
+
+  - Pass new instance of WPDefaultVideoController to SLPlayerManager.
+
+    ```Objective-C
+      UIView *attachmentView = [WPDefaultVideoControllerView new];
+
+      [[SLPlayerManager sharedManager]
+       //...
+       attachmentView:attachmentView
+       // ...];
+    ```
+
+    If given, attachment view will be added to main content, content you want to play, with same size with video player's boundaries.
+
+
+### Social share data
+
+  Social share is easy to implement built-in widget, that covers Facebook, Twitter and Mail share options. These options are valid if and only if accounts enabled at device settings.
+
+  All share data passed within SLShare instance
+
+  ```Objective-C
+  // Allocation & initialization of handler
+  SLShare *share = [[SLShare alloc] init];
+
+  // Assign share data here. See below for more details
+
+  // Assignment of handler
+  [[SLPlayerManager sharedManager]
+    // ...
+    share:share
+    // ...];
+
+  ```
+
+  Available share data are;
+
+  - Share text, takes NSString instance input as share data.
+  - Share urls, takes NSArray instance. NSArray elements could be either NSURL instance or NSString instance with valid NSURL.
+  - Share images, takes NSArray instance. NSArray elements could be either UIImage instance, NSURL instance of image data or NSString instance with valid image data URL.
+
+  - Share title, takes NSString instance input as mail title. Only used when share via mail prompted.
+  - Share recipients, takes NSArray instance input as share mail recipients. Only used when share via mail prompted.
+
+  - **Social**, used when share with Facebook or Twitter prompted.
+    - **Text**, takes NSString instance input as social share text
+      ```Objective-C
+      share.socialText = @"This text will be shared at Facebook or Twitter";
+      ```
+    - **Urls**, takes NSArray instance. NSArray elements could be either NSURL instance or NSString instance with valid NSURL.
+      ```Objective-C
+      NSString *urlString = @"http://this.is/string";
+      NSURL *url = [NSURL URLWithString:@"https://this.is/url"];
+
+      share.socialUrls = @[urlString, url];
+      ```
+    - **Images**, takes NSArray instance. NSArray elements could be either UIImage instance, NSURL instance of image data or NSString instance with valid image data URL.
+      ```Objective-C
+      NSString *urlString = @"http://this.is/string/image.png";
+      NSURL *url = [NSURL URLWithString:@"https://this.is/url/image.png"];
+
+      share.socialImages = @[urlString, url];
+      ```
+
+  - **Mail**, only used when share via mail prompted.
+    - **Body**, takes NSString instance input as mail body.
+    ```Objective-C
+    share.mailBody = @"This text will appear at mail body";
+    ```
+    - **Title**, takes NSString instance input as mail title.
+    ```Objective-C
+    share.mailTitle = @"This text will appear at mail title";
+    ```
+    - **Recipients**, takes NSArray instance input as mail recipients.
+    ```Objective-C
+    self.mailRecipients = @[
+      @"1@recipient.com",
+      @"2@recipient.com"
+      ];
+    ```
+
+  - **Sms**, only used when share via mail prompted.
+    - **Body**, takes NSString instance input as sms body.
+    ```Objective-C
+    share.smsBody = @"This text will appear at sms body";
+    ```
+    - **Recipients**, takes NSArray instance input as mail recipients.
+    ```Objective-C
+    self.smsRecipients = @[
+      @"123 456 78 45",
+      @"+90(999)9998877",
+      @"2244"
+      ];
+    ```
+
+
+### Custom player controllers
+
+  // Coming soon to documentation
 
 
 ### See sample project for usage
