@@ -274,8 +274,9 @@ How to use
       //your stuff here
     }
 
-}
+  }
   ```
+
 - If you want to clean your dataSource (Remove all ads in your dataSource and reload your collectionView);
 ```Objective-C
   [self.adManager cleanDataSource];
