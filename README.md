@@ -346,6 +346,13 @@ How to use
 - You can set your background colors and CTA Button image:
 
 ![Alt text](/ReadmeAssets/customization/2.png "colors")
+```Objective-C
+    appearance.maiaAdHeaderBackgroundColor = [UIColor lightGrayColor];  
+    appearance.maiaAdFooterBackgroundColor = [UIColor grayColor];
+    appearance.cellBackgroundColor = [UIColor whiteColor];
+    appearance.containerBackgroundColor = [UIColor whiteColor];
+    appearance.ctaButtonImage = [UIImage imageNamed:@"yourImage"];
+```
 
 
 ### See sample project for usage
