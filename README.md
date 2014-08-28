@@ -353,6 +353,9 @@ How to use
     appearance.containerBackgroundColor = [UIColor whiteColor];
     appearance.ctaButtonImage = [UIImage imageNamed:@"yourImage"];
 ```
+- You can set your container and maia ads border line color, width and corner radius:
+
+![Alt text](/ReadmeAssets/customization/1.png "Borders")
 
 
 ### See sample project for usage
