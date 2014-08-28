@@ -343,6 +343,10 @@ How to use
 ```
 >Your containers left and right insets shouldn't be greater than 22 pt!
 
+- If your container width greater than display ads width, display ads also show in container.
+ You can set display ads bottom and top inset with container.
+ ![Alt text](/ReadmeAssets/customization/4.png "display container")
+
 - You can set your background colors and CTA Button image:
 
 ![Alt text](/ReadmeAssets/customization/2.png "colors")
