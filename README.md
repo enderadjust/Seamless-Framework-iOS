@@ -72,7 +72,7 @@ Installation
 
     ![Alt text](/ReadmeAssets/Common/addflagobjc.png "Add linker flag '-ObjC'")
 
-  , and you are done.
+  ... and you are done.
 
   *To dive in coding, see **"How to use"** section below.*
 
@@ -195,6 +195,11 @@ How to use
     }
   }
   ```
+- If you want to clean your dataSource (Remove all ads in your dataSource and reload your tableView);
+```Objective-C
+  [self.adManager cleanDataSource];
+```
+
 ### CollectionView integration
 
 - Import required headers
@@ -271,6 +276,10 @@ How to use
 
 }
   ```
+- If you want to clean your dataSource (Remove all ads in your dataSource and reload your collectionView);
+```Objective-C
+  [self.adManager cleanDataSource];
+```
 
 ### Banner integration
   - Import required headers
