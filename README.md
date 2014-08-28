@@ -356,6 +356,13 @@ How to use
 - You can set your container and maia ads border line color, width and corner radius:
 
 ![Alt text](/ReadmeAssets/customization/1.png "Borders")
-
+```Objective-C
+    appearance.containerBorderWidth = 1.0;
+    appearance.containerBorderLineColor = [UIColor blackColor];
+    appearance.containerCornerRadius = 5.0;
+    appearance.maiaAdBorderWidth = 0.5;
+    appearance.maiaAdBorderLineColor = [UIColor blackColor];
+    appearance.maiaAdCornerRadius = 3;
+```
 
 ### See sample project for usage
