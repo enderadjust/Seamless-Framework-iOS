@@ -372,6 +372,24 @@ You can set display ads bottom and top inset with container.
     appearance.maiaAdBorderLineColor = [UIColor blackColor];
     appearance.maiaAdCornerRadius = 3;
 ```
-- For the text properties you have these options:
+- For the text properties you can set font, size and text color:
+
 ![Alt text](/ReadmeAssets/customization/5.png "Texts")
+```Objective-C
+    appearance.maiaContainerTitleFont = [UIFont systemFontOfSize:15.0];
+    appearance.maiaContainerTitleTextColor = [UIColor blackColor];
+    appearance.maiaAppNameFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaAppNameTextColor = [UIColor blackColor];
+    appearance.maiaSponsorFont = [UIFont systemFontOfSize:11.0];
+    appearance.maiaSponsorTextColor = [UIColor blackColor];
+    appearance.maiaDescriptionFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaDescriptionTextColor = [UIColor blackColor];
+    appearance.maiaTaglineFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaTaglineTextColor = [UIColor blackColor];
+    appearance.maiaDownloadInfoFont = [UIFont systemFontOfSize:11.0];
+    appearance.maiaDownloadInfoTextColor = [UIColor blackColor];
+    appearance.maiaCTAFont = [UIFont systemFontOfSize:13.0];
+    appearance.maiaCTATextColor = [UIColor blackColor];
+```
+
 ### See sample project for usage
