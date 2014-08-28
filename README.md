@@ -251,8 +251,10 @@ How to use
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         [self.adManager didSelectItemAtIndexPath:indexPath];
     }
+    else{
+      //your stuff here
+    }
 
-    //your stuff here
 }
   ```
 
