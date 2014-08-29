@@ -417,11 +417,8 @@ You can set display ads bottom and top inset with container.
     appearance.maiaCTATextColor = [UIColor blackColor];
 ```
 
-### See sample project for usage
 
-
-Player
-_____________________________
+##Player
 
 
 ### Setup
@@ -675,11 +672,3 @@ _____________________________
       @"2244"
       ];
     ```
-
-
-### Custom player controllers
-
-  // Coming soon to documentation
-
-
-### See sample project for usage
