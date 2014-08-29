@@ -28,27 +28,35 @@ Installation
      If folder is not visible at the left side of XCode window, you could reveal navigation bar with (command + shift + j) keyboard shortcut and find it under your project. A dialog for file adding options will appear
 
 
+<<<<<<< HEAD
       ![Alt text](/ReadmeAssets/DragAndDrop/dragframework.png "Drag & drop Seamless.framework")
+=======
+  ![Alt text](/ReadmeAssets/DragAndDrop/6.png "Drag & drop Seamless.embeddedframework")
+>>>>>>> origin/master
 
-      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetup.png "File adding options setup dialog")
-
-
-      . On dialog;
-
-        * Create groups for any added folders and
-
-          ![Alt text](/ReadmeAssets/DragAndDrop/dragsetupfolders.png "Select 'Create groups for any added folders and'")
+  ![Alt text](/ReadmeAssets/DragAndDrop/7.png "File adding options setup dialog")
 
 
+  . On dialog;
 
-        * "YourProjectName" at "Add to targets" section.
+  * Create groups for any added folders and
 
-          ![Alt text](/ReadmeAssets/DragAndDrop/dragsetuptarget.png "Select <YourProjectName> at "Add to targets" section.")
+      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetupfolders.png "Select 'Create groups for any added folders and'")
 
 
+
+  * "YourProjectName" at "Add to targets" section.
+
+      ![Alt text](/ReadmeAssets/DragAndDrop/dragsetuptarget.png "Select <YourProjectName> at "Add to targets" section.")
+
+    must be selected.
+
+<<<<<<< HEAD
           must be selected.
 
           If cloned Seamless's git repository, it is recommended, but not mandatory, to un-check (de-select) "Copy items into destination group's folder (if needed)", as keeping repository up-to-date would be much more easier.
+=======
+>>>>>>> origin/master
 
   2. Now, you have to add 'Other Linker Flags'. Click project navigator icon ![Alt text](/ReadmeAssets/Common/iconnavigator.png "Navigator icon") at upper-left corner (below run button)
 
@@ -74,7 +82,7 @@ Installation
 
     ![Alt text](/ReadmeAssets/Common/addflagobjc.png "Add linker flag '-ObjC'")
 
-  , and you are done.
+  ... and you are done.
 
   *To dive in coding, see **"How to use"** section below.*
 
@@ -95,7 +103,23 @@ How to use
 
       // ...
 
-      [SLManager setAppToken:@"<Please contact seamless@mobilike.com for app token data>"];
+      [[SLManager sharedManager] setAppToken:@"<Please contact seamless@mobilike.com for app token data>"];
+
+      // ...
+
+      return YES;
+    }
+  ```
+
+  If you want to enable location based targeting, you should enable.
+  ```Objective-C
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+      // Override point for customization after application launch.
+
+      // ...
+
+      [[SLManager sharedManager] setLocationEnabled:YES];
 
       // ...
 
@@ -181,6 +205,11 @@ How to use
     }
   }
   ```
+- If you want to clean your dataSource (Remove all ads in your dataSource and reload your tableView);
+```Objective-C
+  [self.adManager cleanDataSource];
+```
+
 ### CollectionView integration
 
 - Import required headers
@@ -251,10 +280,17 @@ How to use
     if([self.adManager shouldShowAdAtIndexPath:indexPath]){
         [self.adManager didSelectItemAtIndexPath:indexPath];
     }
+    else{
+      //your stuff here
+    }
 
-    //your stuff here
-}
+  }
   ```
+
+- If you want to clean your dataSource (Remove all ads in your dataSource and reload your collectionView);
+```Objective-C
+  [self.adManager cleanDataSource];
+```
 
 ### Banner integration
   - Import required headers
@@ -343,10 +379,54 @@ How to use
 ```
 >Your containers left and right insets shouldn't be greater than 22 pt!
 
+- If your container width greater than display ads width, display ads also show in container.
+You can set display ads bottom and top inset with container.
+
+![Alt text](/ReadmeAssets/customization/4.png "display container")
+```Objective-C
+    appearance.displayAdBottomInset = 10.0;
+    appearance.displayAdTopInset = 10.0;
+```
 - You can set your background colors and CTA Button image:
 
 ![Alt text](/ReadmeAssets/customization/2.png "colors")
+```Objective-C
+    appearance.maiaAdHeaderBackgroundColor = [UIColor lightGrayColor];  
+    appearance.maiaAdFooterBackgroundColor = [UIColor grayColor];
+    appearance.cellBackgroundColor = [UIColor whiteColor];
+    appearance.containerBackgroundColor = [UIColor whiteColor];
+    appearance.ctaButtonImage = [UIImage imageNamed:@"yourImage"];
+```
+- You can set your container and maia ads border line color, width and corner radius:
 
+![Alt text](/ReadmeAssets/customization/1.png "Borders")
+```Objective-C
+    appearance.containerBorderWidth = 1.0;
+    appearance.containerBorderLineColor = [UIColor blackColor];
+    appearance.containerCornerRadius = 5.0;
+    appearance.maiaAdBorderWidth = 0.5;
+    appearance.maiaAdBorderLineColor = [UIColor blackColor];
+    appearance.maiaAdCornerRadius = 3;
+```
+- For the text properties you can set font, size and text color:
+
+![Alt text](/ReadmeAssets/customization/5.png "Texts")
+```Objective-C
+    appearance.maiaContainerTitleFont = [UIFont systemFontOfSize:15.0];
+    appearance.maiaContainerTitleTextColor = [UIColor blackColor];
+    appearance.maiaAppNameFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaAppNameTextColor = [UIColor blackColor];
+    appearance.maiaSponsorFont = [UIFont systemFontOfSize:11.0];
+    appearance.maiaSponsorTextColor = [UIColor blackColor];
+    appearance.maiaDescriptionFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaDescriptionTextColor = [UIColor blackColor];
+    appearance.maiaTaglineFont = [UIFont systemFontOfSize:14.0];
+    appearance.maiaTaglineTextColor = [UIColor blackColor];
+    appearance.maiaDownloadInfoFont = [UIFont systemFontOfSize:11.0];
+    appearance.maiaDownloadInfoTextColor = [UIColor blackColor];
+    appearance.maiaCTAFont = [UIFont systemFontOfSize:13.0];
+    appearance.maiaCTATextColor = [UIColor blackColor];
+```
 
 ### See sample project for usage
 
