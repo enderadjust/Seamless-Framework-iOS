@@ -418,4 +418,9 @@ You can set display ads bottom and top inset with container.
     appearance.maiaCTATextColor = [UIColor blackColor];
 ```
 
+- You can set appearance;
+![Alt text](/ReadmeAssets/customization/5.png "Texts")
+```Objective-C
+  [self.adManager setAppearance:appearance];
+```
 ### See sample project for usage
