@@ -33,7 +33,7 @@ Requirements
 
   * [Feed Ad Customization](#feed-ad-customization)  
   
-## [Video Player Integration](#player)  
+## Video Player Integration  
  
   * [Setup](#setup-1)  
   * [Basic Usage](#basic-usage)  
