@@ -15,7 +15,34 @@ Requirements
 
 - Frameworks
 
-  - As of "-ObjC" flag must be defined, no need to link additional binary libraries (frameworks)
+  - As of "-ObjC" flag must be defined, no need to link additional binary libraries (frameworks)  
+  
+## [Installation](https://github.com/mobilikedev/Seamless-Framework-iOS#installation) 
+
+  * [Drag and drop](https://github.com/mobilikedev/Seamless-Framework-iOS#drag-and-drop)  
+
+## How to use  
+
+  * [Setup](https://github.com/mobilikedev/Seamless-Framework-iOS#setup)  
+  * [TableView Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#tableview-integration)  
+  * [CollectionView Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#collectionview-integration)  
+  * [Banner Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#banner-integration)  
+  * [Interstitial Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#interstitial-integration)  
+  
+## Customizing you ads  
+
+  * [Feed Ad Customization](https://github.com/mobilikedev/Seamless-Framework-iOS#feed-ad-customization)  
+  
+## [Video Player Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#player)  
+ 
+  * [Setup](https://github.com/mobilikedev/Seamless-Framework-iOS#setup-1)  
+  * [Basic Usage](https://github.com/mobilikedev/Seamless-Framework-iOS#basic-usage)  
+  * [Seamless Callbacks](https://github.com/mobilikedev/Seamless-Framework-iOS#seamless-callbacks)  
+  * [Default Video Controllers](https://github.com/mobilikedev/Seamless-Framework-iOS#default-video-controllers)  
+  * [Socail Share Data](https://github.com/mobilikedev/Seamless-Framework-iOS#social-share-data)  
+
+ 
+
 
 
 
