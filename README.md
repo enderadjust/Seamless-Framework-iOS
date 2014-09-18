@@ -17,7 +17,7 @@ Requirements
 
   - As of "-ObjC" flag must be defined, no need to link additional binary libraries (frameworks)  
   
-## [Installation](#installation) 
+## Installation 
 
   * [Drag and drop](#drag-and-drop)  
 
