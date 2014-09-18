@@ -17,9 +17,9 @@ Requirements
 
   - As of "-ObjC" flag must be defined, no need to link additional binary libraries (frameworks)  
   
-## [Installation](https://github.com/mobilikedev/Seamless-Framework-iOS#installation) 
+## [Installation](#installation) 
 
-  * [Drag and drop](https://github.com/mobilikedev/Seamless-Framework-iOS#drag-and-drop)  
+  * [Drag and drop](#drag-and-drop)  
 
 ## How to use  
 
