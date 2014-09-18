@@ -491,12 +491,12 @@ You can set display ads bottom and top inset with container.
 
       ```Objective-C
         NSURL *url = [NSURL URLWithString:@"<Your video content url>"];
-        NSString *token = @"<Please contact info@mobilike.com for player token data>";
+        NSString *entity = @"<Your entity>";
 
         [[SLPlayerManager sharedManager]
          addPlayerToView:self.videoThumbnail
          url:url
-         token:token];
+         entity:entity];
       ```
 
 
@@ -512,11 +512,11 @@ You can set display ads bottom and top inset with container.
 
       ```Objective-C
         NSURL *url = [NSURL URLWithString:@"<Your video content url>"];
-        NSString *token = @"<Please contact info@mobilike.com for player token data>";
+        NSString *entity = @"<Your entity>";
 
         [[SLPlayerManager sharedManager]
           presentPlayerWithUrl:url
-          token:token];
+          entity:entity];
       ```
 
 
