@@ -25,7 +25,7 @@ Requirements
 
   * [Setup](#setup)  
   * [TableView Integration](#tableview-integration)  
-  * [CollectionView Integration](S#collectionview-integration)  
+  * [CollectionView Integration](#collectionview-integration)  
   * [Banner Integration](#banner-integration)  
   * [Interstitial Integration](#interstitial-integration)  
   
