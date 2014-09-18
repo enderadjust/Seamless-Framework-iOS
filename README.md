@@ -29,7 +29,7 @@ Requirements
   * [Banner Integration](#banner-integration)  
   * [Interstitial Integration](#interstitial-integration)  
   
-## Customizing you ads  
+## Customizing your feed ads  
 
   * [Feed Ad Customization](#feed-ad-customization)  
   
@@ -39,7 +39,7 @@ Requirements
   * [Basic Usage](#basic-usage)  
   * [Seamless Callbacks](#seamless-callbacks)  
   * [Default Video Controllers](#default-video-controllers)  
-  * [Socail Share Data](#social-share-data)  
+  * [Social Share Data](#social-share-data)  
 
  
 
