@@ -23,23 +23,23 @@ Requirements
 
 ## How to use  
 
-  * [Setup](https://github.com/mobilikedev/Seamless-Framework-iOS#setup)  
-  * [TableView Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#tableview-integration)  
-  * [CollectionView Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#collectionview-integration)  
-  * [Banner Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#banner-integration)  
-  * [Interstitial Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#interstitial-integration)  
+  * [Setup](#setup)  
+  * [TableView Integration](#tableview-integration)  
+  * [CollectionView Integration](S#collectionview-integration)  
+  * [Banner Integration](#banner-integration)  
+  * [Interstitial Integration](#interstitial-integration)  
   
 ## Customizing you ads  
 
-  * [Feed Ad Customization](https://github.com/mobilikedev/Seamless-Framework-iOS#feed-ad-customization)  
+  * [Feed Ad Customization](#feed-ad-customization)  
   
-## [Video Player Integration](https://github.com/mobilikedev/Seamless-Framework-iOS#player)  
+## [Video Player Integration](#player)  
  
-  * [Setup](https://github.com/mobilikedev/Seamless-Framework-iOS#setup-1)  
-  * [Basic Usage](https://github.com/mobilikedev/Seamless-Framework-iOS#basic-usage)  
-  * [Seamless Callbacks](https://github.com/mobilikedev/Seamless-Framework-iOS#seamless-callbacks)  
-  * [Default Video Controllers](https://github.com/mobilikedev/Seamless-Framework-iOS#default-video-controllers)  
-  * [Socail Share Data](https://github.com/mobilikedev/Seamless-Framework-iOS#social-share-data)  
+  * [Setup](#setup-1)  
+  * [Basic Usage](#basic-usage)  
+  * [Seamless Callbacks](#seamless-callbacks)  
+  * [Default Video Controllers](#default-video-controllers)  
+  * [Socail Share Data](#social-share-data)  
 
  
 
